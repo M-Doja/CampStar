@@ -59,6 +59,7 @@
     </div>
   </div>
 </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXMR7gjvItdFRJOo42NKNcjCBtuHUp-5I&callback=initMap"></script>
 <script>
   function initMap() {
     var lat = <%= campground.lat %>;
@@ -86,6 +87,5 @@
     });
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXMR7gjvItdFRJOo42NKNcjCBtuHUp-5I&callback=initMap"></script>
 
 <% include ../partials/footer %>
