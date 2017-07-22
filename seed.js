@@ -30,29 +30,29 @@ function seedDB(){
       if (err) {
         console.log(err);
       }
-    // data.forEach(function(seed){
-    //   Campground.create(seed, function(err, campsite){
-    //     if (err) {
-    //       console.log(err);
-    //     }else {
-    //       console.log(`added a campground`);
-    //       Comment.create(
-    //         {
-    //           text: "blah blah blah",
-    //           author: "Joe Blow"
-    //         }, function(err, comment){
-    //           if (err) {
-    //             console.log(err);
-    //           }else {
-    //             campsite.comments.push(comment);
-    //             campsite.save();
-    //           }
-    //         })
-    //     }
-    //   });
+    data.forEach(function(seed){
+      Campground.create(seed, function(err, campsite){
+        if (err) {
+          console.log(err);
+        }else {
+          console.log(`added a campground`);
+          Comment.create(
+            {
+              text: "blah blah blah",
+              author: "Joe Blow"
+            }, function(err, comment){
+              if (err) {
+                console.log(err);
+              }else {
+                campsite.comments.push(comment);
+                campsite.save();
+              }
+            })
+        }
+      });
     });
   });
-
+})
 }
 
 module.exports = seedDB;
