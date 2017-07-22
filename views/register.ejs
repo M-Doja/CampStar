@@ -1,12 +1,20 @@
 <% include partials/header %>
 <% include partials/navbar %>
 <div class="container text-center">
-  <form class="" action="/register" method="POST">
-    <h2 class="titleForm">Register</h2>
-    <input type="text" name="username" placeholder="User name">
-    <input type="text" name="password" placeholder="Password">
-    <input type="submit">
-  </form>
+  <div class="row">
+    <form class="enterForm" action="/register" method="POST">
+      <h2 class="titleForm">Register</h2>
+      <div class="form-group">
+        <input required class="form-control" type="text" name="username" placeholder="User name">
+      </div>
+      <div class="form-group">
+        <input required class="form-control" type="text" name="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <input class="loginBtn submit"type="submit">
+      </div>
+    </form>
+  </div>
 </div>
 
 <% include partials/footer %>

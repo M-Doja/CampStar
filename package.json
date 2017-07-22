@@ -1,7 +1,7 @@
 {
   "name": "v1",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Node & Express web application for public rating od camp sites.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -10,7 +10,11 @@
   "engines": {
     "node": "6.10.3"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "express",
+    "passport"
+  ],
   "author": "Micah Dunson",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +23,7 @@
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
+    "geocoder": "^0.2.3",
     "method-override": "^2.3.9",
     "mongodb": "^2.1.7",
     "mongoose": "^4.7.6",

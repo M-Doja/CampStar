@@ -12,6 +12,8 @@
   margin-top: 20px;
 }
 
+
+
 .siteName a,
 .siteName a:visited,
 .siteName a:hover {
@@ -43,6 +45,29 @@
   display: inline-block;
 }
 
+/*REGISTRATION & LOGIN FORMS*/
 .titleForm {
   color: white;
+}
+
+
+.loginBtn {
+  transition: color .2s linear;
+  margin: 10px;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 700;
+  width: 100px;
+}
+
+.loginBtn:hover {
+  color: red;
+}
+.enterForm {
+  margin: 30px auto;
+  border: 3px solid rgba(255, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 5%;
+  background-color: rgba(255, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px  rgba(255, 255, 255, 0.4);
 }

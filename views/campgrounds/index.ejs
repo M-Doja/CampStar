@@ -4,11 +4,24 @@
   <div class="container">
     <header class="jumbotron">
       <div class="container">
-        <h1>Welcome to YelpCamp</h1>
+        <h1><span class="glyphicon glyphicon-tent"></span> Welcome to CampStar</h1>
         <p>View our hand-picked campgrounds from all over the world</p>
         <p>
-          <a class="btn btn-primary" href="/campgrounds/new"> Add New Camp Site</a>
+          <a class="btn btn-primary btn-block" href="/campgrounds/new"> Add New Camp Site</a>
         </p>
+        <p>
+          <form action="/campgrounds" method="GET" class="form-inline text-center" id="campground-search">
+            <div class="form-group">
+              <input type="text" name="search" placeholder="Campground search..." class="form-control">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-primary btn-sm"  type="submit" value="Search" >
+            </div>
+            <div>
+              <a href="/campgrounds">reset form</a>
+            </div>
+          </form>
+         </p>
       </div>
     </header>
 
