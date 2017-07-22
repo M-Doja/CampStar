@@ -17,14 +17,16 @@ const Campground            = require('./models/campground'),
       MONGO_DB              = require('./config/config'),
       seedDB                = require('./seed'),
       app                   = express();
-
+const dbURI                 = MONGO_DB.DB_URI;
 
 // seedDB();
 
 // DATABASE CONNECTION
+mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost:27017/yelpcamp', (err, db) => {
-mongoose.connect(MONGO_DB.DB_URI, (err, db) => {
-
+mongoose.connect(dbURI, {
+  useMongoClient: true
+}, (err, db) => {
   if (err) {
     console.log(err);
   }
