@@ -4,12 +4,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <p class="lead">CampStar</p>
+      <p class="lead"><strong>Site: <%= campground.name.toUpperCase() %></strong></p>
       <p><a href="/campgrounds"><strong>Back to Campgrounds</strong></a></p>
       <div class="list-group">
-        <li class="list-group-item active">Info 1</li>
-        <li class="list-group-item">Info 2</li>
-        <li class="list-group-item">Info 3</li>
+        <li class="list-group-item active">Location</li>
+        <li class="list-group-item"><%= campground.location %></li>
+        <li class="list-group-item">latitude: <%= campground.lat %></li>
+        <li class="list-group-item">longitude: <%= campground.lng %></li>
       </div>
       <div id="map"></div>
 
@@ -19,7 +20,7 @@
         <img src="<%= campground.images %>" alt="">
         <div class="caption-full">
           <h4 class="pull-right">Cost Per Night: $<%= campground.price %></h4>
-          <h4><a href="#"><%= campground.name %></a></h4>
+          <h4><a href="#"><%= campground.name.toUpperCase() %></a></h4>
           <p><%= campground.description %></p>
           <p>
             <em>Submitted by <%= campground.author.username %></em>
@@ -59,33 +60,6 @@
     </div>
   </div>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXMR7gjvItdFRJOo42NKNcjCBtuHUp-5I&callback=initMap"></script>
-<script>
-  function initMap() {
-    var lat = <%= campground.lat %>;
-    var lng = <%= campground.lng %>;
-    var center = {lat: lat, lng: lng };
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: center,
-        scrollwheel: false
-    });
-    var contentString = `
-      <strong><%= campground.name %><br />
-      <%= campground.location %></strong>
-      <p><%= campground.description %></p>
-    `
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    var marker = new google.maps.Marker({
-        position: center,
-        map: map
-    });
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-  }
-</script>
+
 
 <% include ../partials/footer %>

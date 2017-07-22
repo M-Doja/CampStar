@@ -45,6 +45,7 @@ router.get("/", function(req, res){
 // ADDING A NEW CAMPGROUND
 router.post('/', Mid.isLoggedIn, (req, res) => {
   console.log(req.body.images);
+  var encodedAddress = encodeURIComponent(req.body.location);
   geocoder.geocode(req.body.location, (err, data) => {
     var lat = data.results[0].geometry.location.lat;
     var lng = data.results[0].geometry.location.lng;
@@ -57,9 +58,11 @@ router.post('/', Mid.isLoggedIn, (req, res) => {
       price: req.body.price,
       author: author,
       location: location,
+      locationStr: encodedAddress,
       lat: lat,
       lng: lng
     }
+    console.log(newCampground);
     Campground.create(newCampground, (err, newSite) => {
       if (err) {
         console.log(err);

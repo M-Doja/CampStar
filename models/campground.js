@@ -7,6 +7,7 @@ var campgroundSchema = new mongoose.Schema({
   description: String,
   price: Number,
   location: String,
+  locationStr: String,
   lat: Number,
   lng: Number,
   createdAt: {
