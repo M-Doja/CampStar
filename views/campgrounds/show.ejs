@@ -23,7 +23,8 @@
           <h4><a href="#"><%= campground.name.toUpperCase() %></a></h4>
           <p><%= campground.description %></p>
           <p>
-            <em>Submitted by <%= campground.author.username %></em>
+            <em>Submitted by <%= campground.author.username %></em><br>
+            <i>Added: <%= campground.createdAt.toDateString() %></i>
           </p>
            <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
              <div class="">
