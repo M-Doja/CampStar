@@ -21,6 +21,9 @@ const dbURI                 = MONGO_DB.DB_URI;
 
 // seedDB();
 
+function getDate(){
+  return new Date().getFullYear();
+}
 // DATABASE CONNECTION
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost:27017/yelpcamp', (err, db) => {
