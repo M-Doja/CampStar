@@ -26,16 +26,21 @@
             <em>Submitted by <%= campground.author.username %></em>
           </p>
            <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-             <a class="btn btn-primary" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-             <form class="deleteform" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
-               <button class="btn btn-danger" >Delete</button>
-             </form>
+             <div class="">
+               <button type="button" id="setBtn"data-toggle="collapse" data-target="#mySetting"class="settingBtn"><span class="glyphicon glyphicon-cog"></span> Settings</button>
+               <div  class="collapse" id="mySetting">
+                 <a class="btn btn-primary" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+                 <form class="deleteform" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+                   <button class="btn btn-danger" >Delete</button>
+                 </form>
+               </div>
+             </div>
           <% }%>
         </div>
       </div>
       <div class="well">
         <div class="text-right">
-          <a class="btn btn-success"href="/campgrounds/<%= campground._id %>/comments/new">Leave A Review</a>
+          <a class="btn btn-primary"href="/campgrounds/<%= campground._id %>/comments/new">Leave A Review</a>
           <hr>
         </div>
         <% campground.comments.forEach(function(comment){ %>

@@ -14,6 +14,19 @@
 
 .viewBtn {
   box-shadow: 2.5px 2.5px 2px rgba(255, 255, 255, 0.3);
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  background-color: #ddd;
+  color: #555;
+  transition: all .4s ease;
+}
+
+.viewBtn:hover {
+  background-color: #286090;
+  color:white;
+
 }
 
 .siteName a,
@@ -33,9 +46,11 @@
 .caption {
   background-color: #f8f8f8;
 }
+
 .thumbnail img {
   width: 100%;
 }
+
 .thumbnail {
   padding: 0;
 }
@@ -43,15 +58,16 @@
 .thumbnail .caption-full {
   padding: 9px;
 }
+
 .deleteform {
   display: inline-block;
 }
-
-/*REGISTRATION & LOGIN FORMS*/
+/*==================================
+    REGISTRATION & LOGIN FORMS
+*/
 .titleForm {
   color: white;
 }
-
 
 .loginBtn {
   transition: color .2s linear;
@@ -65,6 +81,7 @@
 .loginBtn:hover {
   color: red;
 }
+
 .enterForm {
   margin: 30px auto;
   border: 3px solid rgba(255, 0, 0, 0.3);
@@ -72,4 +89,18 @@
   padding: 5%;
   background-color: rgba(255, 0, 0, 0.1);
   box-shadow: 3px 3px 10px  rgba(255, 255, 255, 0.4);
+}
+
+#mySetting {
+  margin: 25px auto;
+}
+
+.settingBtn {
+  padding: 5px;
+  border-radius: 4px;
+  outline: none;
+}
+
+#srcBtn {
+  margin:auto  5px;
 }

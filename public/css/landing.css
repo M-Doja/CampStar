@@ -8,6 +8,7 @@ body {
   text-align: center;
   padding-top: 40vh;
 }
+
 #landing-header h1 {
   color: #fff;
 }
@@ -74,7 +75,6 @@ body {
     opacity: 0
   }
 }
-
 
 /* Older browser support - .no-cssanimations class added by modernizr */
 .no-cssanimations .slideshow li {

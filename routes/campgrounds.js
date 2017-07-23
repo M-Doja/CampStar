@@ -103,22 +103,10 @@ router.get('/:id/edit', Mid.checkCampgroundOwnership, (req, res) => {
 
 // UPDATE CAMPGROUND ROUTE
 router.put('/:id', (req, res) => {
-  geocoder.geocode(req.body.location, (err, data) => {
-    var lat = data.results[0].geometry.location.lat;
-    var lng = data.results[0].geometry.location.lng;
-    var location = data.results[0].formatted_address;
-    var author = {username: req.user.username, id: req.user._id};
-    var newCampground = {
-      name: req.body.name,
-      images: req.body.images,
-      description: req.body.description,
-      price: req.body.price,
-      author: author,
-      location: location,
-      lat: lat,
-      lng: lng
-    }
-    Campground.findByIdAndUpdate(req.params.id, {$set: newCampground}, (err, campground) => {
+  // geocoder.geocode(req.body.location, (err, data) => {
+    // console.log(data);
+
+    Campground.findByIdAndUpdate(req.params.id, req.body.campground, (err, campground) => {
       if (err) {
         console.log(err);
         res.redirect('/campgrounds');
@@ -127,7 +115,7 @@ router.put('/:id', (req, res) => {
       }
     });
   });
-});
+// });
 
 // DELETE CAMPGROUND
 router.delete('/:id', Mid.checkCampgroundOwnership, (req, res) => {
